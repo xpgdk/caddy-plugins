@@ -5,7 +5,7 @@ package dreamhost
 import (
 	"errors"
 
-	"github.com/mholt/caddy/caddytls"
+	"github.com/caddyserver/caddy/caddytls"
 	"github.com/xenolf/lego/providers/dns/dreamhost"
 )
 
