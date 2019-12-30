@@ -23,7 +23,9 @@ func NewDNSProvider(credentials ...string) (caddytls.ChallengeProvider, error) {
 	case 0:
 		return dreamhost.NewDNSProvider()
 	case 1:
-		return dreamhost.NewDNSProviderCredentials(credentials[0])
+                config := dreamhost.NewDefaultConfig()
+                config.APIKey = credentials[0]
+		return dreamhost.NewDNSProviderConfig(config)
 	default:
 		return nil, errors.New("invalid credentials length")
 	}
